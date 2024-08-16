@@ -3,9 +3,10 @@ import {  useEffect, useState } from "react";
 import gamesService from "../services/games-service";
 
 
-interface gameType {
+export interface gameType {
   id: number;
   name: string;
+  background_image: string;
 }
 
 interface gameResType {
