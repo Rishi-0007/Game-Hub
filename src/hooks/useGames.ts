@@ -1,4 +1,4 @@
-import { AxiosError } from "axios";
+import { AxiosError, CanceledError } from "axios";
 import {  useEffect, useState } from "react";
 import gamesService from "../services/games-service";
 
@@ -24,16 +24,23 @@ interface gameResType {
 const useGames = () => {
   const [games, setGames] = useState<gameType[]>([]);
   const [error, setError] = useState<AxiosError>();
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const { request, cancel } = gamesService.getAll<gameResType>();
     
-    request.then(res => setGames(res.data.results)).catch(err => setError(err));
+    request.then(res => {
+      setGames(res.data.results); 
+      setLoading(false);
+    }).catch(err => {if (err instanceof CanceledError)
+      setError(err);
+      setLoading(false)
+    });
 
     return () => cancel();
   }, []);
 
-  return { games, error };
+  return { games, error, isLoading };
 }
 
 export default useGames;
