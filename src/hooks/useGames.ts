@@ -2,11 +2,17 @@ import { AxiosError } from "axios";
 import {  useEffect, useState } from "react";
 import gamesService from "../services/games-service";
 
+export interface Platform{
+  id: number;
+  name: string;
+  slug: string;
+}
 
 export interface gameType {
   id: number;
   name: string;
   background_image: string;
+  parent_platforms: {platform: Platform}[];
 }
 
 interface gameResType {
