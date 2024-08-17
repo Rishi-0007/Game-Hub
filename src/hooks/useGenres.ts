@@ -7,9 +7,9 @@ interface Genre {
 }
 
 const useGenres = () => {
-    const { data } = useData<Genre>('/genres')
+    const { data, isLoading , error} = useData<Genre>('/genres')
     
-    return {data}
+    return {data, error,isLoading}
 }
 
 export default useGenres
