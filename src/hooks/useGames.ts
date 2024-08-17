@@ -1,6 +1,6 @@
 import { AxiosError, CanceledError } from "axios";
 import {  useEffect, useState } from "react";
-import gamesService from "../services/games-service";
+import apiClient from "../services/api-client";
 
 export interface Platform{
   id: number;
@@ -27,17 +27,18 @@ const useGames = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const { request, cancel } = gamesService.getAll<gameResType>();
-    
-    request.then(res => {
+    const controller = new AbortController()
+
+      apiClient.get<gameResType>('/games', { signal: controller.signal }).then(res => {
       setGames(res.data.results); 
       setLoading(false);
-    }).catch(err => {if (err instanceof CanceledError)
-      setError(err);
-      setLoading(false)
-    });
-
-    return () => cancel();
+      }).catch(err => {
+        if (err instanceof CanceledError) return;  //if error msg is type of cancel error then simply return
+        setError(err);
+        setLoading(false);
+      });
+    
+    return () => controller.abort();
   }, []);
 
   return { games, error, isLoading };
