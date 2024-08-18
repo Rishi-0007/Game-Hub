@@ -4,10 +4,11 @@ import getCroppedImg from "../services/getCroppedImg";
 import GenresListSkeleton from "./GenresListSkeleton";
 
 interface Props {
-  onSelectedGenre: (genre: Genre | null) => void;
+  onSelectedGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenresList = ({ onSelectedGenre }: Props) => {
+const GenresList = ({ onSelectedGenre, selectedGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
 
   if (error) return null;
@@ -23,7 +24,11 @@ const GenresList = ({ onSelectedGenre }: Props) => {
               boxSize={"32px"}
               borderRadius={8}
             />
-            <Button variant="link" onClick={() => onSelectedGenre(g)}>
+            <Button
+              variant="link"
+              onClick={() => onSelectedGenre(g)}
+              fontWeight={g.id === selectedGenre?.id ? "bold" : "normal"}
+            >
               {g.name}
             </Button>
           </HStack>
