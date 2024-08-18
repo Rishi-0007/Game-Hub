@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
 export interface Platform{
   id: number;
@@ -15,8 +16,9 @@ export interface gameType {
 }
 
 
-const useGames = () => {  
-  const { data,error,isLoading } = useData<gameType>('/games')
+const useGames = (selectedGenre: Genre | null) => {  
+  // here, we are using the useData hook to fetch the games data based on the selected genre(Query parameter)
+  const { data,error,isLoading } = useData<gameType>('/games', {params: {genres: selectedGenre?.id}}, [selectedGenre?.id] )
   
   return {data,error,isLoading}
 }
