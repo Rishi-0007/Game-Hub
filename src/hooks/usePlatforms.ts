@@ -8,9 +8,9 @@ interface Platform{
 
 const usePlatforms = () => {
 
-    const {data} = useData<Platform>('/platforms/lists/parents')
+    const {data, error} = useData<Platform>('/platforms/lists/parents')
 
-  return {data}
+  return {data, error}
 }
 
 export default usePlatforms
