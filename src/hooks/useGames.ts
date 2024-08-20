@@ -20,7 +20,13 @@ export interface gameType {
 const useGames = (gameQuery: gameQuery) => {  
   // here, we are using the useData hook to fetch the games data based on the selected genre(Query parameter)
   const { data, error, isLoading } = useData<gameType>('/games',
-    { params: { genres: gameQuery.genre?.id, platforms: gameQuery.platform?.id } },
+    {
+      params: {
+        genres: gameQuery.genre?.id,
+        platforms: gameQuery.platform?.id,
+        ordering: gameQuery.selecteddSort,
+      }
+    },
     [gameQuery])
   
   return {data,error,isLoading}
