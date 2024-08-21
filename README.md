@@ -1,50 +1,95 @@
-# React + TypeScript + Vite
+# Game Seek
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Game Seek** is a web application built using React and TypeScript that allows users to explore and search for video games. The project aims to provide a smooth and responsive user experience with a modern interface, making it easy to find information about various games.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Live Demo](#live-demo)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Search Functionality**: Quickly find games by title.
+- **Game Details**: View detailed information about each game, including description, release date, genre, and more.
+- **Filter and Sort**: Filter games by genre and platform, and sort results by relevance, popularity, release date, ratings, and more.
+- **Responsive Design**: Fully responsive design, optimized for both desktop and mobile devices.
+- **User-Friendly Interface**: Clean and intuitive UI/UX.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+To run this project locally, follow these steps:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Clone the repository**:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   git clone https://github.com/Rishi-0007/GameSeek.git
+   cd GameSeek
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Add your RAWG.io API key**:
+
+   - Navigate to the `services` folder.
+   - Open the `api-client.ts` file.
+   - Replace the placeholder API key with your own RAWG.io API key:
+     ```typescript
+     params: {
+       key: "YOUR_RAWG.IO_API_KEY";
+     }
+     ```
+
+4. **Run the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:5173/` to see the application in action.
+
+## Usage
+
+- **Search Games**: Use the search bar to find games by name.
+- **Filter by Genre and Platform**: Narrow down your search by selecting specific genres or platforms.
+- **Sort Results**: Organize games by relevance, popularity, release date, ratings, and more.
+- **View Game Details**: Click on a game to view more details, including description, release information, and more.
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **TypeScript**: Typed superset of JavaScript that compiles to plain JavaScript.
+- **Chakra UI**: Component library for building accessible React applications.
+- **RAWG.io API**: Used for fetching game data and other queries.
+
+## Live Demo
+
+You can check out the live version of Game Seek [here](https://gameseek.vercel.app/).
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, suggestions, or issues, feel free to submit a pull request or open an issue in the repository.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Contact
+
+If you have any questions or feedback, you can reach me at:
+
+- **GitHub**: [Rishi-0007](https://github.com/Rishi-0007)
+- **Email**: [rishikumarnayak9@gmail.com]
+
+---
+
+This version should better reflect the features and technologies of your project!
