@@ -10,7 +10,6 @@
 - [Technologies Used](#technologies-used)
 - [Live Demo](#live-demo)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -79,16 +78,12 @@ You can check out the live version of Game Seek [here](https://gameseek.vercel.a
 
 Contributions are welcome! If you have any ideas, suggestions, or issues, feel free to submit a pull request or open an issue in the repository.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
 ## Contact
 
 If you have any questions or feedback, you can reach me at:
 
 - **GitHub**: [Rishi-0007](https://github.com/Rishi-0007)
-- **Email**: [rishikumarnayak9@gmail.com]
+- **Email**: rishikumarnayak9@gmail.com
 
 ---
 
