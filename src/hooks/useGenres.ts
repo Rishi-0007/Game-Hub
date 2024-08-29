@@ -17,6 +17,7 @@ const useGenres = () => {
     queryKey: ["Genres"],
     queryFn: () =>
       apiClient.get<fetchResType<Genre>>("/genres").then((res) => res.data),
+    staleTime: 24 * 60 * 60 * 1000, // for 24h genre will consider as fresh
   });
 
   //   return { data, error, isLoading };
