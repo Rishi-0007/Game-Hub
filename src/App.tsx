@@ -10,7 +10,7 @@ import GameHeading from "./components/GameHeading";
 export interface gameQuery {
   genreId?: number;
   platformId?: number;
-  selecteddSort: string;
+  selectedSort: string;
   searchText: string;
 }
 
@@ -55,9 +55,9 @@ const App = () => {
           />
           <SortSelector
             onSortSelected={(s) =>
-              setGameQuery({ ...gameQuery, selecteddSort: s })
+              setGameQuery({ ...gameQuery, selectedSort: s })
             }
-            selectedSort={gameQuery.selecteddSort}
+            selectedSort={gameQuery.selectedSort}
           />
         </HStack>
         <GameGrid gameQuery={gameQuery} />
