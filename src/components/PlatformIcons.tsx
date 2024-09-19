@@ -10,7 +10,7 @@ import { SiNintendoswitch } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { MdPhoneIphone } from "react-icons/md";
 import { HStack, Icon } from "@chakra-ui/react";
-import { Platform } from "../hooks/usePlatforms";
+import { Platform } from "../entities/Platform";
 import { IconType } from "react-icons";
 
 interface Props {
