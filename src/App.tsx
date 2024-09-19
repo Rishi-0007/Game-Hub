@@ -28,7 +28,7 @@ const App = () => {
     >
       <GridItem area="nav">
         <Navbar />
-      </GridItem>
+      </GridItem>{" "}
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <GenresList />
