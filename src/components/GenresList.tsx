@@ -1,11 +1,4 @@
-import {
-  Button,
-  Heading,
-  HStack,
-  Image,
-  List,
-  ListItem,
-} from "@chakra-ui/react";
+import { Button, HStack, Image, List, ListItem } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 import { Genre } from "../entities/Genre";
 import getCroppedImg from "../services/getCroppedImg";
@@ -23,9 +16,6 @@ const GenresList = () => {
 
   return (
     <>
-      <Heading size={"lg"} color={"gray.400"}>
-        Genres
-      </Heading>
       <List>
         {data?.results.map((g: Genre) => (
           <ListItem key={g.id} paddingY={"5px"}>

@@ -11,6 +11,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
+  Heading,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import GameGrid from "../components/GameGrid";
@@ -35,6 +36,9 @@ const HomePage = () => {
     >
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
+          <Heading size={"lg"} color={"gray.400"}>
+            Genres
+          </Heading>
           <GenresList />
         </GridItem>
       </Show>
